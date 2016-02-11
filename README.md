@@ -22,7 +22,7 @@ files with .ipynb extensions. Add this to your git attributes file (usually loca
 
 4. Connect the `drop_ipynb_output.py` script to the filter:
 
-   git config --global filter.clean_ipynb.clean ~/.config/git/dropoutput/drop_ipynb_output.py %f
+   git config --global filter.clean_ipynb.clean "~/.config/git/dropoutput/drop_ipynb_output.py %f"
    git config --global filter.clean_ipynb.smudge cat
 
 # Acknowledgements
