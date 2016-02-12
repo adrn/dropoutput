@@ -52,7 +52,7 @@ if os.path.exists(CLEAN_IPYNB_IGNORE_PATH): # if the clean_ipynb_ignore file exi
         for line in f.readlines():
             if line.strip(): # make sure the line is not empty
                 if fnmatch.fnmatch(nb_filename, line) or \
-                os.path.samefile(os.path.dirname(nb_filename, line)):
+                    os.path.samefile(os.path.dirname(nb_filename, line)):
                     # check if the nb filename matches any of the glob patterns
                     #   or is in an ignored directory
                     dumpit(json_in)
@@ -62,14 +62,14 @@ metadata = json_in.get("metadata", dict())
 
 # by default, suppress output and line numbers
 suppress_output = True
-if "git" in nb_metadata:
-    if "suppress_outputs" in nb_metadata["git"] and not nb_metadata["git"]["suppress_outputs"]:
+if "git" in metadata:
+    if "suppress_outputs" in metadata["git"] and not metadata["git"]["suppress_outputs"]:
         suppress_output = False
 
 # exit early and return the file as-is if we shouldn't filter output cells
 if not suppress_output:
     sys.stdout.write(nb)
-    exit()
+    sys.exit(0)
 
 def clean(cell):
     """ Remove the output from a cell and clear the execution count. """
