@@ -56,6 +56,7 @@ if os.path.exists(CLEAN_IPYNB_IGNORE_PATH): # if the clean_ipynb_ignore file exi
                     # check if the nb filename matches any of the glob patterns
                     #   or is in an ignored directory
                     dumpit(json_in)
+                    sys.exit(0)
 
 # get the metadata block of the notebook
 metadata = json_in.get("metadata", dict())
