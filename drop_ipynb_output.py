@@ -1,32 +1,6 @@
 #!/usr/bin/env python
 
-"""
-Suppress output and prompt numbers for IPython notebooks included in git
-repositories.
-
-By default, this script will tell git to ignore prompt numbers and
-cell output when adding ipynb files to git repositories. Note that the
-notebook files themselves are *not* changed, this script just filters
-out the outputs before adding and committing with git.
-
-This default behavior can be changed either on a notebook-by-notebook
-basis, or for entire paths. To include output for a single notebook, modify
-the metadata of the notebook (Edit -> Edit Notebook Metadata in the menu bar)
-and add this:
-
-    "git" : { "suppress_output" : false }
-
-to include output from that notebook. To include output for notebooks that
-match a given glob pattern (e.g., for an entire path), you can create and
-add paths to the file: ~/.config/git/clean_ipynb_ignore. For example, to
-include output for all notebooks in ~/projects/notebooks that start with
-"demo", add a line to the ignore file with:
-
-    ~/projects/notebooks/demo*
-
-See README.md for instructions on how to install this script.
-
-"""
+""" See README.md for instructions on how to install this script. """
 
 # Path to the ignore file
 CLEAN_IPYNB_IGNORE_PATH = "~/.config/git/clean_ipynb_ignore"
