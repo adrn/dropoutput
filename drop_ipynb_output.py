@@ -30,14 +30,11 @@ if os.path.isfile(CLEAN_IPYNB_IGNORE_PATH): # if the clean_ipynb_ignore file exi
         for line in f.readlines():
             line = line.strip()
             if line: # make sure the line is not empty
-                print(line, nb_filename)
                 if fnmatch.fnmatch(nb_filename, line):
                     # check if the nb filename matches any of the glob patterns
                     #   or is in an ignored directory
                     suppress_output = False
                     break
-
-print("\n"*10)
 
 # get the metadata block of the notebook
 metadata = json_in.get("metadata", dict())
