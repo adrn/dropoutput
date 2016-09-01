@@ -1,4 +1,4 @@
-# Drop IPython notebook output
+# Clear Jupyter notebook output on commit
 
 Removes cell numbers and output from IPython notebooks added to a git repository,
 but leaves the files unchanged.
@@ -50,4 +50,4 @@ the ignore file with:
 
 # Acknowledgements
 
-This code was inspired by [this blogpost](http://pascalbugnion.net/blog/ipython-notebooks-and-git.html).
+This code was inspired by [this blog post](http://pascalbugnion.net/blog/ipython-notebooks-and-git.html).
