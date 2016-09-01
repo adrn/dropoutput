@@ -38,7 +38,7 @@ basis, or for entire paths. To include output for a single notebook, modify
 the metadata of the notebook (Edit -> Edit Notebook Metadata in the menu bar)
 and add this line to the metadata:
 
-    "git" : { "suppress_output" : false }
+    "git" : { "clear_outputs" : false }
 
 To include output for any notebook that matches a given glob pattern (e.g.,
 for an entire path), you can create and add paths to the file:

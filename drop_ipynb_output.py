@@ -37,7 +37,8 @@ metadata = json_in.get("metadata", dict())
 # by default, suppress output and line numbers
 suppress_output = True
 if "git" in metadata:
-    if "suppress_outputs" in metadata["git"] and not metadata["git"]["suppress_outputs"]:
+    if (("clear_outputs" in metadata["git"]) or ("suppress_outputs" in metadata["git"])) \ # 2nd bit is backwards compatibility
+        and not metadata["git"]["suppress_outputs"]:
         suppress_output = False
 
 # exit early and return the file as-is if we shouldn't filter output cells
