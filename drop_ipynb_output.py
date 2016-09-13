@@ -41,9 +41,9 @@ metadata = json_in.get("metadata", dict())
 
 if "git" in metadata:
     # 2nd bit in 'or' is for backwards compatibility
-    if ((("clear_outputs" in metadata["git"]) or ("suppress_outputs" in metadata["git"])) and
-        not metadata["git"]["suppress_outputs"]):
-        suppress_output = False
+    for name in ["clear_outputs", "drop_outputs", "suppress_outputs"]:
+        if name in metadata['git'] and not metadata['git'][name]:
+            suppress_output = False
 
 # exit early and return the file as-is if we shouldn't filter output cells
 if not suppress_output:
