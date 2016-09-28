@@ -30,6 +30,7 @@ if os.path.isfile(CLEAN_IPYNB_IGNORE_PATH): # if the clean_ipynb_ignore file exi
         for line in f.readlines():
             line = line.strip()
             if line: # make sure the line is not empty
+                line = os.path.abspath(os.path.expanduser(line))
                 if fnmatch.fnmatch(nb_filename, line):
                     # check if the nb filename matches any of the glob patterns
                     #   or is in an ignored directory
